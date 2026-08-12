@@ -1,0 +1,42 @@
+# 彩票分析同步目录
+
+此目录是技能与历史记录的云端同步源，建议保存到私有 Git 仓库。
+
+## 目录职责
+
+- `skill/analyze-lottery-history/`：可安装的完整技能源文件。
+- `data/current/`：当前最新开奖记录与分析结果；后续预测只使用这里的数据。
+- `data/archive/`：旧版数据快照，只用于追溯。
+- `predictions/`：开奖前保存的预测；每期新建文件，禁止覆盖旧文件。
+- `reviews/`：开奖后的复盘记录；每期新建文件。
+- `scripts/install-skill.ps1`：将仓库内的技能安装到当前 Windows 用户的 Codex 目录。
+
+## 每期更新顺序
+
+1. 保存新开奖结果并更新 `data/current/records.json`。
+2. 把新的走势分析写入 `data/current/analysis.json`。
+3. 在 `reviews/` 新建对应期号的复盘文件。
+4. 在 `predictions/` 新建下一期预测文件。
+5. 提交并推送：
+
+```powershell
+git add skill data predictions reviews
+git commit -m "Review issue 088 and predict issue 089"
+git push
+```
+
+## 换电脑恢复技能
+
+在此目录打开 PowerShell 后运行：
+
+```powershell
+.\scripts\install-skill.ps1
+```
+
+脚本会复制到 `$HOME\.codex\skills\analyze-lottery-history`。如果目标技能已存在，脚本会先在本目录的 `backups/` 中创建时间戳备份，再覆盖安装。
+
+## 云端安全
+
+- 仓库设置为 Private。
+- 不提交密码、令牌、私钥或 `.env`。
+- 不修改已经开奖期次对应的历史预测文件；需要纠错时新建更正文件并说明原因。

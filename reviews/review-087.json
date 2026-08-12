@@ -1,0 +1,25 @@
+{
+  "cutoff_issue": "086",
+  "target_issue": "087",
+  "actual_issue": "087",
+  "method_version": "weighted-frequency-gap-v1",
+  "prediction_created_at": "2026-08-11T09:26:48.536383+00:00",
+  "predicted_special_number": 43,
+  "actual_special_number": 13,
+  "special_number_hit": false,
+  "predicted_special_zodiac": "鼠",
+  "actual_special_zodiac": "马",
+  "special_zodiac_hit": false,
+  "special_pick_regular_hit": true,
+  "regular_hits": [
+    28,
+    36
+  ],
+  "regular_hit_count": 2,
+  "any_overlap": [
+    28,
+    36,
+    43
+  ],
+  "special_abs_error": 30
+}

@@ -1,0 +1,17 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and generated files
+*.tmp
+*.bak
+__pycache__/
+work/
+
+# Never commit credentials
+.env
+.env.*
+*.key
+*.pem
+secrets/

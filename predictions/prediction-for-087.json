@@ -1,0 +1,45 @@
+{
+  "schema": "lottery-prediction/v1",
+  "created_at": "2026-08-11T09:26:48.536383+00:00",
+  "cutoff_issue": "086",
+  "method_version": "weighted-frequency-gap-v1",
+  "seed": 20260811,
+  "regular": [
+    {
+      "number": 9,
+      "zodiac": "狗",
+      "score": 0.15897
+    },
+    {
+      "number": 25,
+      "zodiac": "马",
+      "score": 0.152085
+    },
+    {
+      "number": 28,
+      "zodiac": "兔",
+      "score": 0.109169
+    },
+    {
+      "number": 36,
+      "zodiac": "羊",
+      "score": 0.155233
+    },
+    {
+      "number": 39,
+      "zodiac": "龙",
+      "score": 0.15059
+    },
+    {
+      "number": 40,
+      "zodiac": "兔",
+      "score": 0.134684
+    }
+  ],
+  "special": {
+    "number": 43,
+    "zodiac": "鼠",
+    "score": 0.097051
+  },
+  "disclaimer": "仅供统计娱乐；随机开奖无法被可靠预测。"
+}
