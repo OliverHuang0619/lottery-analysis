@@ -10,6 +10,7 @@
 - `predictions/`：开奖前保存的预测；每期新建文件，禁止覆盖旧文件。
 - `reviews/`：开奖后的复盘记录；每期新建文件。
 - `scripts/install-skill.ps1`：将仓库内的技能安装到当前 Windows 用户的 Codex 目录。
+- `scripts/install-skill.sh`：将仓库内的技能安装到当前 macOS / Linux 用户的 Codex 目录。
 
 ## 每期更新顺序
 
@@ -19,7 +20,7 @@
 4. 在 `predictions/` 新建下一期预测文件。
 5. 提交并推送：
 
-```powershell
+```bash
 git add skill data predictions reviews
 git commit -m "Review issue 088 and predict issue 089"
 git push
@@ -27,13 +28,24 @@ git push
 
 ## 换电脑恢复技能
 
+### Windows
+
 在此目录打开 PowerShell 后运行：
 
 ```powershell
 .\scripts\install-skill.ps1
 ```
 
-脚本会复制到 `$HOME\.codex\skills\analyze-lottery-history`。如果目标技能已存在，脚本会先在本目录的 `backups/` 中创建时间戳备份，再覆盖安装。
+### macOS / Linux
+
+在此目录打开终端后运行：
+
+```bash
+chmod +x scripts/install-skill.sh   # 首次需要
+./scripts/install-skill.sh
+```
+
+脚本会复制到 `$HOME/.codex/skills/analyze-lottery-history`。如果目标技能已存在，脚本会先在本目录的 `backups/` 中创建时间戳备份，再覆盖安装。可通过环境变量 `CODEX_HOME` 覆盖默认的 `~/.codex` 路径。
 
 ## 云端安全
 
