@@ -1,4 +1,4 @@
 interface:
-  display_name: "彩票特码生肖分析"
-  short_description: "提取开奖记录，重点预测特码生肖及该生肖首选号码并持续复盘"
-  default_prompt: "使用 $analyze-lottery-history 复盘上期的特码号码与生肖，并预测下期首选生肖和该生肖首选号码。"
+  display_name: "彩票走势与预测复盘"
+  short_description: "分析滚动走势，预测特码生肖，并统计真实与回测准确率"
+  default_prompt: "使用 $analyze-lottery-history 更新开奖记录、复盘准确率并生成下一期走势预测。"

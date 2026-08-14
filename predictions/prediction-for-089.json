@@ -1,0 +1,81 @@
+{
+  "schema": "lottery-prediction/v2",
+  "created_at": "2026-08-14T00:10:50.973016+00:00",
+  "cutoff_issue": "088",
+  "target_issue": "089",
+  "method_version": "special-zodiac-first-v2",
+  "seed": 20260814,
+  "regular": [
+    {
+      "number": 9,
+      "zodiac": "狗",
+      "score": 0.158766
+    },
+    {
+      "number": 10,
+      "zodiac": "鸡",
+      "score": 0.100893
+    },
+    {
+      "number": 18,
+      "zodiac": "牛",
+      "score": 0.100568
+    },
+    {
+      "number": 25,
+      "zodiac": "马",
+      "score": 0.156575
+    },
+    {
+      "number": 39,
+      "zodiac": "龙",
+      "score": 0.155114
+    },
+    {
+      "number": 44,
+      "zodiac": "猪",
+      "score": 0.102029
+    }
+  ],
+  "top_special_zodiac": {
+    "zodiac": "鼠",
+    "score": 0.236023
+  },
+  "ranked_special_zodiacs": [
+    {
+      "zodiac": "鼠",
+      "score": 0.236023
+    },
+    {
+      "zodiac": "兔",
+      "score": 0.221136
+    },
+    {
+      "zodiac": "猪",
+      "score": 0.205909
+    }
+  ],
+  "special": {
+    "number": 19,
+    "zodiac": "鼠",
+    "score": 0.161364
+  },
+  "numbers_in_top_zodiac": [
+    {
+      "number": 19,
+      "zodiac": "鼠",
+      "score": 0.161364
+    },
+    {
+      "number": 31,
+      "zodiac": "鼠",
+      "score": 0.155682
+    },
+    {
+      "number": 7,
+      "zodiac": "鼠",
+      "score": 0.155682
+    }
+  ],
+  "disclaimer": "仅供统计娱乐；随机开奖无法被可靠预测。"
+}

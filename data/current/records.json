@@ -4,6 +4,19 @@
   "order": "descending",
   "records": [
     {
+      "issue": "088",
+      "date": null,
+      "numbers": [
+        {"position": "平一", "number": 47, "zodiac": "猴"},
+        {"position": "平二", "number": 27, "zodiac": "龙"},
+        {"position": "平三", "number": 21, "zodiac": "狗"},
+        {"position": "平四", "number": 35, "zodiac": "猴"},
+        {"position": "平五", "number": 48, "zodiac": "羊"},
+        {"position": "平六", "number": 40, "zodiac": "兔"},
+        {"position": "特码", "number": 23, "zodiac": "猴"}
+      ]
+    },
+    {
       "issue": "087",
       "date": null,
       "numbers": [

@@ -7,24 +7,35 @@
 - `special_zodiac_hit`: exact equality of predicted and actual special zodiac.
 - `special_pick_regular_hit`: predicted special number occurred among the six actual regular numbers; never count it as a special hit.
 - `any_overlap`: intersection of all seven predicted and actual numbers.
-- `special_abs_error`: absolute numeric distance; descriptive only because lottery numbers are categorical outcomes.
-- Keep cumulative and rolling 10/20-issue hit rates for special number and special zodiac.
-- `brier`: for probabilistic candidates, mean squared error between assigned probability and outcome indicator. Do not compute it from unnormalized scores.
+- `special_abs_error`: descriptive numeric distance only; lottery numbers are categorical outcomes.
+- Keep cumulative and rolling 10/20-review rates for special number and zodiac.
 
-## Trend features
+## Trend model v3
 
-Compute separately for all seven positions, the six regular positions, and the special position where sample size permits:
+Use fixed components for zodiac and within-zodiac number ranking:
 
-- full-history and rolling 10/20/30 issue frequencies;
-- issues since last occurrence (gap);
-- repeats from the immediately preceding issue;
-- odd/even, 1-24 vs 25-49, tail digit, and zodiac counts;
-- pair co-occurrence only as a low-weight descriptive feature because sparse pairs overfit easily.
+- 20% full-history frequency;
+- 25% rolling-30 frequency;
+- 30% rolling-10 frequency;
+- 25% exponentially weighted frequency with an eight-issue half-life;
+- 0% positive overdue weighting.
+
+Treat gap as descriptive metadata only. Never infer that a long absence increases the next-draw probability. Treat scores as rankings rather than calibrated probabilities.
+
+## Analysis features
+
+Compute separately for all seven positions, regular positions, and the special position:
+
+- full-history and rolling 10/20/30 frequencies;
+- exponentially decayed frequency;
+- issues since last occurrence for description only;
+- immediate repeats, odd/even, 1-24 vs 25-49, tail digit, and zodiac counts;
+- sparse pair co-occurrence only as a low-weight descriptive feature.
 
 ## Review and improvement
 
-Keep the model versioned. Evaluate candidate weight changes with expanding-window walk-forward tests. Optimize a predeclared metric, report the number of folds, and retain the old version unless improvement exceeds simulation noise. Never retrospectively change a saved prediction. Append a new version and explain the change.
+Keep the model versioned and preserve every saved prediction. Evaluate candidate changes with expanding-window walk-forward tests. Use special-zodiac Top-1 accuracy as the primary metric, exact special-number accuracy as secondary, and Top-3 zodiac recall when available.
 
-For special-first models, use special-zodiac top-1 accuracy as the primary metric and special-number top-1 accuracy as the secondary metric. Also report top-3 zodiac recall when three candidates are emitted. Select the primary number only after selecting the primary zodiac, and require it to belong to that zodiac under the current mapping.
+Report genuine saved-review accuracy separately from walk-forward accuracy. The former measures forecasts actually saved before a draw; the latter is development evidence and must include fold count and target range. Never pool them.
 
-Randomness means short losing or winning streaks are expected. Avoid gambler's fallacy: an overdue number is not made more likely by previous absence, and a hot number is not made more likely by previous occurrence. Frequency and gap features are ranking heuristics only.
+Randomness makes short streaks expected. A hot or overdue outcome is not made more likely by past draws; trend features are ranking heuristics only.
