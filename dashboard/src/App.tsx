@@ -4,6 +4,7 @@ import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Too
 import './App.css'
 import './dashboard.css'
 import './forecast.css'
+import './roi.css'
 
 type Ball = { position: string; number: number; zodiac: string }
 type RecordRow = { issue: string; date: string; numbers: Ball[] }
@@ -11,8 +12,10 @@ type Review = { actual_issue: string; predicted_special_number: number; predicte
 type ModelRow = { method_version: string; no_repeat_enabled: boolean; folds: number; special_zodiac_accuracy: number; special_zodiac_top3_accuracy: number; special_number_accuracy: number; average_regular_hits: number; regular_three_exact_accuracy: number }
 type Prediction = { target_issue: string; created_at: string; special: Ball; flat_zodiac?: { zodiac: string }; regular: Ball[]; regular_three: Ball[]; forecast_assessment: { status: string; strong_pick: boolean; walk_forward: { folds: number; accuracy: number }; saved_reviews: { count: number; accuracy: number | null }; flat_zodiac?: { walk_forward_folds: number; walk_forward_hits: number; walk_forward_accuracy: number; saved_review_count: number; saved_review_hits: number; saved_review_accuracy: number | null } } }
 type DashboardData = { generatedAt: string; records: RecordRow[]; prediction: Prediction; reviews: Review[]; analysis: { issues: number; special_zodiac_frequency: Record<string, number> }; evaluation: { models: ModelRow[] } }
+type RoiView = 'all' | 'regular' | 'special' | 'flat'
 const pad = (n: number) => String(n).padStart(2, '0')
 const pct = (n: number | null | undefined) => n == null ? '—' : `${(n * 100).toFixed(1)}%`
+const signed = (n: number) => `${n >= 0 ? '+' : ''}${n.toFixed(0)}`
 const modelNames: Record<string, string> = { 'random-uniform': '随机基线', 'trend-v3': '现行趋势', 'trend-short': '短窗口', 'trend-long': '长窗口', 'stable-candidate': '稳健候选' }
 
 function BallBadge({ ball, special = false, compact = false, hit = false }: { ball: Ball; special?: boolean; compact?: boolean; hit?: boolean }) {
@@ -29,6 +32,7 @@ function App() {
   const [query, setQuery] = useState('')
   const [page, setPage] = useState(0)
   const [selectedReview, setSelectedReview] = useState<Review | null>(null)
+  const [roiView, setRoiView] = useState<RoiView>('all')
   const load = useCallback(async () => {
     setLoading(true)
     try { const response = await fetch('/api/dashboard', { cache: 'no-store' }); if (!response.ok) throw new Error(`数据接口返回 ${response.status}`); setData(await response.json()); setError('') }
@@ -49,6 +53,30 @@ function App() {
   const prediction = data?.prediction
   const genuine = useMemo(() => { const reviews = data?.reviews ?? []; const flatZodiac = reviews.filter(x => x.flat_zodiac_hit != null); return { count: reviews.length, zodiac: reviews.filter(x => x.special_zodiac_hit).length, number: reviews.filter(x => x.special_number_hit).length, flatSpecial: reviews.filter(x => x.special_pick_regular_hit).length, flatZodiacCount: flatZodiac.length, flatZodiacHits: flatZodiac.filter(x => x.flat_zodiac_hit).length, triple: reviews.filter(x => x.regular_three_exact_hit).length } }, [data])
   const flatZodiacReviews = useMemo(() => (data?.reviews ?? []).filter(row => row.flat_zodiac_hit != null), [data])
+  const roiRows = useMemo(() => (data?.reviews ?? []).map(row => {
+    const stake = 8
+    const flatReturn = row.flat_zodiac_hit ? 2 : 0
+    const regularReturn = row.regular_hit_count * 7
+    const specialReturn = row.special_number_hit ? 47 : 0
+    const returns = flatReturn + regularReturn + specialReturn
+    const profit = returns - stake
+    return { ...row, stake, flatReturn, regularReturn, specialReturn, returns, profit, roi: stake ? profit / stake : 0 }
+  }), [data])
+  const roiSummary = useMemo(() => {
+    const stake = roiRows.reduce((sum, row) => sum + (roiView === 'regular' ? 6 : roiView === 'all' ? row.stake : 1), 0)
+    const returns = roiRows.reduce((sum, row) => sum + (roiView === 'regular' ? row.regularReturn : roiView === 'special' ? row.specialReturn : roiView === 'flat' ? row.flatReturn : row.returns), 0)
+    return { stake, returns, profit: returns - stake, roi: stake ? (returns - stake) / stake : null }
+  }, [roiRows, roiView])
+  const roiLabels: Record<RoiView, string> = { all: '全部投注', regular: '平码', special: '特码', flat: '平特一肖' }
+  const selectedStake = (row: (typeof roiRows)[number]) => roiView === 'regular' ? 6 : roiView === 'all' ? row.stake : 1
+  const selectedReturn = (row: (typeof roiRows)[number]) => roiView === 'regular' ? row.regularReturn : roiView === 'special' ? row.specialReturn : roiView === 'flat' ? row.flatReturn : row.returns
+  const returnDetail = (row: (typeof roiRows)[number]) => roiView === 'regular'
+    ? `六码中${row.regular_hit_count}个 · 返${row.regularReturn}`
+    : roiView === 'special'
+      ? `${row.special_number_hit ? '命中' : '未中'} · 返${row.specialReturn}`
+      : roiView === 'flat'
+        ? `${row.predicted_flat_zodiac ?? '未记录'} · ${row.flat_zodiac_hit ? '命中' : '未中'} · 返${row.flatReturn}`
+        : `平特一肖 ${row.flatReturn || '—'} · 平码 ${row.regularReturn || '—'} · 特码 ${row.specialReturn || '—'}`
   const trend = useMemo(() => (data?.records ?? []).slice(0, 24).reverse().map(row => ({ issue: row.issue, number: row.numbers[6].number, zodiac: row.numbers[6].zodiac })), [data])
   const zodiacBars = useMemo(() => Object.entries(data?.analysis.special_zodiac_frequency ?? {}).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value), [data])
   const filtered = useMemo(() => (data?.records ?? []).filter(row => !query || row.issue.includes(query) || row.date.includes(query) || row.numbers.some(ball => String(ball.number).padStart(2, '0').includes(query) || ball.zodiac.includes(query))), [data, query])
@@ -56,7 +84,7 @@ function App() {
   const pageCount = Math.max(1, Math.ceil(filtered.length / 8))
 
   return <main>
-    <header className="topbar"><div className="brand-mark"><Activity size={19}/></div><div className="brand-copy"><strong>财富自由</strong><span>开奖记录 · 趋势 · 预测复盘</span></div><nav><a href="#overview">总览</a><a href="#trends">走势</a><a href="#flat-zodiac">平特一肖</a><a href="#flat-special">平特码</a><a href="#history">开奖记录</a></nav><div className="sync-state"><span className="live-dot"/><span>动态数据</span><button onClick={load} disabled={loading} aria-label="刷新数据"><RefreshCw size={16} className={loading?'spin':''}/>刷新</button></div></header>
+    <header className="topbar"><div className="brand-mark"><Activity size={19}/></div><div className="brand-copy"><strong>财富自由</strong><span>开奖记录 · 趋势 · 预测复盘</span></div><nav><a href="#overview">总览</a><a href="#trends">走势</a><a href="#roi">投资回报</a><a href="#flat-zodiac">平特一肖</a><a href="#flat-special">平特码</a><a href="#history">开奖记录</a></nav><div className="sync-state"><span className="live-dot"/><span>动态数据</span><button onClick={load} disabled={loading} aria-label="刷新数据"><RefreshCw size={16} className={loading?'spin':''}/>刷新</button></div></header>
     {error && <div className="error-banner">{error}，请确认本地数据服务正在运行。</div>}
     <section className="intro" id="overview"><div><p className="eyebrow"><span/> LIVE ANALYTICS</p><h1>把每一期，放回数据里看。</h1><p className="lede">自动读取最新开奖记录、锁定预测与真实复盘。数据每60秒刷新，所有预测与回测口径分开呈现。</p></div><div className="updated"><Clock3 size={15}/>{data?new Date(data.generatedAt).toLocaleString('zh-CN'):'正在连接数据…'}</div></section>
     <section className="headline-grid">
@@ -70,6 +98,19 @@ function App() {
       <Metric icon={<Activity size={19}/>} label="平特码命中" value={`${genuine.flatSpecial}/${genuine.count||'—'}`} hint={pct(genuine.count?genuine.flatSpecial/genuine.count:null)}/>
       <Metric icon={<Target size={19}/>} label="平特肖命中" value={`${genuine.flatZodiacHits}/${genuine.flatZodiacCount||'—'}`} hint={genuine.flatZodiacCount?pct(genuine.flatZodiacHits/genuine.flatZodiacCount):'等待首期复盘'}/>
       <Metric icon={<BarChart3 size={19}/>} label="3中3命中" value={`${genuine.triple}/${data?.reviews.filter(x=>x.regular_three_exact_hit!==undefined).length||'—'}`} hint="特码不计入平码组合"/>
+    </section>
+    <section className="section-block" id="roi">
+      <div className="section-title"><div><span className="kicker">RETURN LEDGER</span><h2>投资回报率</h2></div><p>每注投入1单位；页面所列返还均已包含本金。</p></div>
+      <div className="roi-tabs" role="tablist" aria-label="投资回报分类">{(Object.keys(roiLabels) as RoiView[]).map(view => <button key={view} role="tab" aria-selected={roiView === view} className={roiView === view ? 'active' : ''} onClick={() => setRoiView(view)}>{roiLabels[view]}</button>)}</div>
+      <div className="roi-summary">
+        <article className="panel"><span>{roiLabels[roiView]}累计投入</span><strong>{roiSummary.stake}</strong><small>单位</small></article>
+        <article className="panel"><span>{roiLabels[roiView]}累计返还</span><strong>{roiSummary.returns}</strong><small>含中奖注本金</small></article>
+        <article className={`panel ${roiSummary.profit >= 0 ? 'roi-positive' : 'roi-negative'}`}><span>累计净收益</span><strong>{signed(roiSummary.profit)}</strong><small>返还－投入</small></article>
+        <article className={`panel ${roiSummary.profit >= 0 ? 'roi-positive' : 'roi-negative'}`}><span>累计 ROI</span><strong>{pct(roiSummary.roi)}</strong><small>净收益 ÷ 投入</small></article>
+      </div>
+      <div className="panel roi-rule"><div><strong>平特一肖</strong><span>1注 · 中返2</span></div><div><strong>平码六码</strong><span>每号1注 · 每中1号返7</span></div><div><strong>特码</strong><span>1注 · 中返47</span></div><div><strong>下一期计划投入</strong><span>{1 + (prediction?.regular.length ?? 6) + (prediction?.flat_zodiac ? 1 : 0)} 单位</span></div></div>
+      <div className="panel table-wrap roi-table"><table><thead><tr><th>开奖期号</th><th>投入</th><th>{roiLabels[roiView]}返还明细</th><th>总返还</th><th>净收益</th><th>回报率 ROI</th></tr></thead><tbody>{roiRows.map(row => { const stake = selectedStake(row); const returns = selectedReturn(row); const profit = returns - stake; const roi = profit / stake; return <tr key={`roi-${row.actual_issue}`}><td><strong>第 {row.actual_issue} 期</strong></td><td>{stake}</td><td><span className="return-detail">{returnDetail(row)}</span></td><td>{returns}</td><td className={profit >= 0 ? 'value-positive' : 'value-negative'}>{signed(profit)}</td><td><span className={roi >= 0 ? 'roi-pill positive' : 'roi-pill negative'}>{pct(roi)}</span></td></tr> })}</tbody></table></div>
+      <p className="roi-note">每期固定投入8单位：六码6、平特一肖1、特码1。旧期未保存的平特一肖不回填预测，返还显示为“—”。该表仅按用户设定赔率复盘，不代表未来收益。</p>
     </section>
     <section className="section-block" id="trends"><div className="section-title"><div><span className="kicker">TREND DESK</span><h2>特码走势与生肖分布</h2></div><p>趋势是历史描述，不等同于下一期开奖概率。</p></div><div className="charts-grid">
       <article className="panel chart-card"><h3>近24期 · 特码轨迹</h3><ResponsiveContainer width="100%" height={270}><LineChart data={trend} margin={{top:18,right:14,left:-18,bottom:0}}><CartesianGrid stroke="#e7e7df" vertical={false}/><XAxis dataKey="issue" tick={{fontSize:10,fill:'#7a8985'}} interval={3}/><YAxis domain={[1,49]} ticks={[1,12,24,36,49]} tick={{fontSize:10,fill:'#7a8985'}}/><Tooltip contentStyle={{borderRadius:10,border:'1px solid #dfe2d8',fontSize:12}} formatter={(value,_,entry)=>[`${pad(Number(value))} · ${entry.payload.zodiac}`,'特码']}/><Line type="monotone" dataKey="number" stroke="#0d6559" strokeWidth={2.5} dot={{r:3,fill:'#f3f1e9',strokeWidth:2}} activeDot={{r:5}}/></LineChart></ResponsiveContainer></article>

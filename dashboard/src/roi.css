@@ -1,0 +1,143 @@
+.roi-tabs {
+  display: inline-flex;
+  gap: 5px;
+  margin-bottom: 14px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 253, 247, 0.72);
+}
+
+.roi-tabs button {
+  padding: 8px 15px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.roi-tabs button:hover {
+  color: var(--green);
+  background: #eef2eb;
+}
+
+.roi-tabs button.active {
+  color: white;
+  background: var(--green);
+  box-shadow: 0 5px 14px rgba(13, 101, 89, 0.2);
+}
+
+.roi-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.roi-summary .panel {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.roi-summary span,
+.roi-summary small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.roi-summary strong {
+  margin: 5px 0 3px;
+  font-size: 27px;
+}
+
+.roi-positive strong,
+.value-positive {
+  color: #17643f;
+}
+
+.roi-negative strong,
+.value-negative {
+  color: #a24734;
+}
+
+.roi-rule {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+  padding: 14px;
+}
+
+.roi-rule > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f1f3ec;
+}
+
+.roi-rule strong {
+  font-size: 11px;
+}
+
+.roi-rule span,
+.return-detail,
+.roi-note {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.roi-table {
+  margin-top: 12px;
+  max-height: 440px;
+  overflow: auto;
+}
+
+.roi-pill {
+  display: inline-flex;
+  min-width: 62px;
+  justify-content: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.roi-pill.positive {
+  color: #17643f;
+  background: #dcefe4;
+}
+
+.roi-pill.negative {
+  color: #943d2c;
+  background: #f8e5df;
+}
+
+.roi-note {
+  margin: 10px 2px 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 950px) {
+  .roi-summary,
+  .roi-rule {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .roi-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .roi-summary,
+  .roi-rule {
+    grid-template-columns: 1fr;
+  }
+}
