@@ -55,7 +55,7 @@ chmod +x scripts/install-skill.sh   # 首次需要
 
 ## GitHub Pages 部署
 
-仓库包含 `.github/workflows/deploy-pages.yml`。推送 `dashboard/`、`data/`、`predictions/` 或 `reviews/` 的变更到 `main` 后，GitHub Actions 会：
+仓库包含 `.github/workflows/deploy-pages.yml`。推送 `dashboard/`、`data/`、`predictions/` 或 `reviews/` 的变更到 `master` 后，GitHub Actions 会：
 
 1. 根据仓库中的最新记录、预测和复盘生成 `dashboard.json`；
 2. 构建 React/Vite 前端；
