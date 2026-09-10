@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "generate:data": "node scripts/generate-dashboard.mjs",
+    "build": "pnpm generate:data && tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
     "start": "node server.mjs"

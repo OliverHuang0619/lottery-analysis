@@ -17,3 +17,4 @@ work/
 secrets/
 
 dashboard/node_modules
+dashboard/public/dashboard.json

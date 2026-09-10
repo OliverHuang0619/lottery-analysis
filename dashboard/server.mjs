@@ -34,7 +34,7 @@ async function dashboardData() {
 const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.svg':'image/svg+xml', '.png':'image/png', '.json':'application/json; charset=utf-8' }
 createServer(async (req, res) => {
   try {
-    if (req.url === '/api/dashboard') {
+    if (req.url === '/dashboard.json' || req.url === '/api/dashboard') {
       res.writeHead(200, { 'Content-Type':'application/json; charset=utf-8', 'Cache-Control':'no-store' })
       return res.end(JSON.stringify(await dashboardData()))
     }

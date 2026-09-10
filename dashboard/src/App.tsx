@@ -35,7 +35,7 @@ function App() {
   const [roiView, setRoiView] = useState<RoiView>('all')
   const load = useCallback(async () => {
     setLoading(true)
-    try { const response = await fetch('/api/dashboard', { cache: 'no-store' }); if (!response.ok) throw new Error(`数据接口返回 ${response.status}`); setData(await response.json()); setError('') }
+    try { const response = await fetch(`${import.meta.env.BASE_URL}dashboard.json`, { cache: 'no-store' }); if (!response.ok) throw new Error(`数据接口返回 ${response.status}`); setData(await response.json()); setError('') }
     catch (reason) { setError(reason instanceof Error ? reason.message : '无法加载数据') }
     finally { setLoading(false) }
   }, [])

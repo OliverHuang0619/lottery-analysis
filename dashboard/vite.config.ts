@@ -29,7 +29,7 @@ async function dashboardPayload() {
 }
 function dynamicData() {
   return { name: 'lottery-dynamic-data', configureServer(server: import('vite').ViteDevServer) {
-    server.middlewares.use('/api/dashboard', async (_req, res) => {
+    server.middlewares.use('/dashboard.json', async (_req, res) => {
       try { res.setHeader('Content-Type', 'application/json; charset=utf-8'); res.setHeader('Cache-Control', 'no-store'); res.end(JSON.stringify(await dashboardPayload())) }
       catch (error) { res.statusCode = 500; res.end(JSON.stringify({ error: error instanceof Error ? error.message : 'unknown error' })) }
     })
@@ -38,5 +38,6 @@ function dynamicData() {
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [react(), dynamicData()],
 })

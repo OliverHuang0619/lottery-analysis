@@ -52,3 +52,15 @@ chmod +x scripts/install-skill.sh   # 首次需要
 - 仓库设置为 Private。
 - 不提交密码、令牌、私钥或 `.env`。
 - 不修改已经开奖期次对应的历史预测文件；需要纠错时新建更正文件并说明原因。
+
+## GitHub Pages 部署
+
+仓库包含 `.github/workflows/deploy-pages.yml`。推送 `dashboard/`、`data/`、`predictions/` 或 `reviews/` 的变更到 `main` 后，GitHub Actions 会：
+
+1. 根据仓库中的最新记录、预测和复盘生成 `dashboard.json`；
+2. 构建 React/Vite 前端；
+3. 把 `dashboard/dist` 发布到 GitHub Pages。
+
+首次使用时，在 GitHub 仓库的 **Settings → Pages → Build and deployment** 中将 Source 设置为 **GitHub Actions**。之后每次数据提交都会自动更新站点。
+
+本地 `pnpm start` 仍会动态提供 `/dashboard.json`；GitHub Pages 则读取构建时生成的静态快照。
