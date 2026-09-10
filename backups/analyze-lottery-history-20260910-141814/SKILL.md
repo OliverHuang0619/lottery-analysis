@@ -1,6 +1,6 @@
 ---
 name: analyze-lottery-history
-description: Extract and update 1-49 lottery histories, analyze rolling draw trends, predict the special number and one all-position flat zodiac, select a regular 3-of-3 candidate, preserve immutable forecasts, review accuracy, run walk-forward tests, and prepare dashboard data. Use for 开奖记录提取、走势图分析、特码预测、平特肖预测、平码3中3预测、命中复盘、准确率统计、前端仪表板 and iterative evaluation.
+description: Extract and update 1-49 lottery histories, analyze rolling draw trends, predict the special-number zodiac and strongest number within it, select a three-number regular 3-of-3 candidate, preserve immutable forecasts, review accuracy, run walk-forward tests, and prepare dashboard data. Use for 开奖记录提取、走势图分析、特码生肖预测、生肖首选号码、平码3中3预测、命中复盘、准确率统计、前端仪表板 and iterative evaluation.
 ---
 
 # Lottery History Analysis
@@ -13,7 +13,7 @@ Treat draws as random events. Never claim guaranteed profit, insider knowledge, 
 2. Validate issue uniqueness, seven distinct numbers, range 1-49, position order, and zodiac labels.
 3. Run `scripts/lottery_history.py analyze records.json --out analysis.json`.
 4. Run `scripts/lottery_history.py predict records.json --reviews-dir reviews --out prediction.json` and save the JSON before the draw.
-5. Lead with exactly one `top_special_zodiac`, one `special.number`, and one `flat_zodiac`. Call them mechanical selections unless their separate assessment demonstrates an edge. Then show ranked zodiac candidates, backup numbers, the six-number regular set, and exactly three `regular_three` numbers.
+5. Lead with exactly one `top_special_zodiac` and one `special.number` belonging to it, but call them a strong pick only when `forecast_assessment.strong_pick` is true. Otherwise lead with `no_demonstrated_edge` and describe the top item as a mechanical ranking. Then show ranked zodiac candidates, backup numbers in the primary zodiac, the six-number secondary regular set, and exactly three `regular_three` numbers for the 3-of-3 candidate.
 6. When a result arrives, run `review`, preserve an immutable review entry, append the verified draw, and create the next prediction from the new cutoff.
 7. Run `scripts/lottery_history.py backtest records.json --out backtest.json` for the production method and `scripts/lottery_history.py evaluate records.json --out evaluation.json` for fixed-candidate comparisons. Do not tune weights from one result and never overwrite superseded predictions.
 
@@ -65,17 +65,9 @@ Treat draws as random events. Never claim guaranteed profit, insider knowledge, 
 - Never optimize the three-number rule from one result or describe it as a higher-probability guarantee.
 - Review `regular_three_hits`, `regular_three_hit_count`, and `regular_three_exact_hit`. Count an exact hit only when all three occur among the six actual regular numbers; the actual special number never counts.
 
-## Flat-zodiac prediction
-
-- Emit exactly one `flat_zodiac` for every new prediction. Score zodiac occurrence across all seven positions with the active fixed trend configuration, then sample once using an independent seed stream and the same 70% trend / 30% uniform mixture.
-- Do not apply the special-number no-repeat constraint to `flat_zodiac` unless the user explicitly adds a separate rule.
-- Mark `flat_zodiac_hit` true when the predicted zodiac appears at least once anywhere among the six regular positions or the special position. Multiple appearances still count as one hit.
-- Count only genuine predictions that already contained `flat_zodiac`; keep older reviews as unavailable rather than backfilling them. Report genuine and walk-forward flat-zodiac accuracy separately.
-- When adding this field to an already locked, undrawn issue, preserve the original prediction and save a clearly named pre-draw amendment instead of overwriting it.
-
 ## Review ledger
 
-Record predicted/actual special number and zodiac, flat-zodiac pick and all-position hit, exact hit flags, special pick appearing in regular positions, six-number regular hits, 3-of-3 picks and hits, all-seven overlap, cutoff/target issue, method version, seed, and prediction timestamp.
+Record predicted/actual special number and zodiac, exact hit flags, special pick appearing in regular positions, six-number regular hits, 3-of-3 picks and hits, all-seven overlap, absolute numeric distance, cutoff/target issue, method version, seed, and prediction timestamp.
 
 Never rewrite an old prediction after seeing the result. A number appearing in a regular position is not a special-number hit.
 

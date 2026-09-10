@@ -15,3 +15,5 @@ work/
 *.key
 *.pem
 secrets/
+
+dashboard/node_modules

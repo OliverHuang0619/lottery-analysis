@@ -1,0 +1,236 @@
+{
+  "schema": "lottery-prediction/v4",
+  "created_at": "2026-08-25T08:39:46.481263+00:00",
+  "cutoff_issue": "090",
+  "target_issue": "091",
+  "method_version": "trend-zodiac-first-v3",
+  "seed": 20260825,
+  "regular": [
+    {
+      "number": 7,
+      "zodiac": "鼠",
+      "score": 0.063001,
+      "components": {
+        "history": 0.005714,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.018953,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 8,
+      "zodiac": "猪",
+      "score": 0.057146,
+      "components": {
+        "history": 0.004127,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.014686,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 9,
+      "zodiac": "狗",
+      "score": 0.05846,
+      "components": {
+        "history": 0.004127,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.016,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 14,
+      "zodiac": "蛇",
+      "score": 0.112899,
+      "components": {
+        "history": 0.005714,
+        "recent30": 0.016667,
+        "recent10": 0.06,
+        "ewma": 0.030518,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 41,
+      "zodiac": "虎",
+      "score": 0.054659,
+      "components": {
+        "history": 0.002857,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.013468,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 49,
+      "zodiac": "马",
+      "score": 0.064117,
+      "components": {
+        "history": 0.003492,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.022292,
+        "overdue": 0.0
+      }
+    }
+  ],
+  "regular_three": [
+    {
+      "number": 14,
+      "zodiac": "蛇",
+      "score": 0.112899,
+      "components": {
+        "history": 0.005714,
+        "recent30": 0.016667,
+        "recent10": 0.06,
+        "ewma": 0.030518,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 49,
+      "zodiac": "马",
+      "score": 0.064117,
+      "components": {
+        "history": 0.003492,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.022292,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 7,
+      "zodiac": "鼠",
+      "score": 0.063001,
+      "components": {
+        "history": 0.005714,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.018953,
+        "overdue": 0.0
+      }
+    }
+  ],
+  "top_special_zodiac": {
+    "zodiac": "猴",
+    "score": 0.229337,
+    "components": {
+      "history": 0.024444,
+      "recent30": 0.05,
+      "recent10": 0.09,
+      "ewma": 0.064893,
+      "overdue": 0.0
+    }
+  },
+  "ranked_special_zodiacs": [
+    {
+      "zodiac": "猴",
+      "score": 0.229337,
+      "components": {
+        "history": 0.024444,
+        "recent30": 0.05,
+        "recent10": 0.09,
+        "ewma": 0.064893,
+        "overdue": 0.0
+      }
+    },
+    {
+      "zodiac": "马",
+      "score": 0.156912,
+      "components": {
+        "history": 0.02,
+        "recent30": 0.033333,
+        "recent10": 0.06,
+        "ewma": 0.043579,
+        "overdue": 0.0
+      }
+    },
+    {
+      "zodiac": "蛇",
+      "score": 0.119426,
+      "components": {
+        "history": 0.011111,
+        "recent30": 0.016667,
+        "recent10": 0.06,
+        "ewma": 0.031648,
+        "overdue": 0.0
+      }
+    }
+  ],
+  "special": {
+    "number": 23,
+    "zodiac": "猴",
+    "score": 0.128443,
+    "components": {
+      "history": 0.006667,
+      "recent30": 0.025,
+      "recent10": 0.06,
+      "ewma": 0.036776,
+      "overdue": 0.0
+    }
+  },
+  "numbers_in_top_zodiac": [
+    {
+      "number": 23,
+      "zodiac": "猴",
+      "score": 0.128443,
+      "components": {
+        "history": 0.006667,
+        "recent30": 0.025,
+        "recent10": 0.06,
+        "ewma": 0.036776,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 47,
+      "zodiac": "猴",
+      "score": 0.058645,
+      "components": {
+        "history": 0.004444,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.015867,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 11,
+      "zodiac": "猴",
+      "score": 0.023826,
+      "components": {
+        "history": 0.006667,
+        "recent30": 0.008333,
+        "recent10": 0.0,
+        "ewma": 0.008826,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 35,
+      "zodiac": "猴",
+      "score": 0.01392,
+      "components": {
+        "history": 0.002222,
+        "recent30": 0.008333,
+        "recent10": 0.0,
+        "ewma": 0.003365,
+        "overdue": 0.0
+      }
+    }
+  ],
+  "weights": {
+    "history": 0.2,
+    "recent30": 0.25,
+    "recent10": 0.3,
+    "ewma_half_life_8": 0.25,
+    "overdue": 0.0
+  },
+  "disclaimer": "仅供统计娱乐；走势排名不是开奖概率，随机开奖无法被可靠预测。"
+}

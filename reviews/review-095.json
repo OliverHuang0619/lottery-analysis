@@ -1,0 +1,33 @@
+{
+  "cutoff_issue": "094",
+  "target_issue": "095",
+  "actual_issue": "095",
+  "method_version": "trend-weighted-random-calibrated-no-repeat-v6",
+  "seed": 20260828,
+  "prediction_created_at": "2026-08-28T13:59:29.632185+00:00",
+  "predicted_special_number": 28,
+  "actual_special_number": 42,
+  "special_number_hit": false,
+  "predicted_special_zodiac": "兔",
+  "actual_special_zodiac": "牛",
+  "special_zodiac_hit": false,
+  "special_pick_regular_hit": false,
+  "regular_hits": [
+    7
+  ],
+  "regular_hit_count": 1,
+  "predicted_regular_three": [
+    25,
+    7,
+    12
+  ],
+  "regular_three_hits": [
+    7
+  ],
+  "regular_three_hit_count": 1,
+  "regular_three_exact_hit": false,
+  "any_overlap": [
+    7
+  ],
+  "special_abs_error": 14
+}

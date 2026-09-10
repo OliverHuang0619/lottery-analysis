@@ -1,0 +1,293 @@
+{
+  "schema": "lottery-prediction/v6",
+  "created_at": "2026-08-31T05:42:14.533773+00:00",
+  "cutoff_issue": "095",
+  "target_issue": "096",
+  "method_version": "trend-weighted-random-calibrated-no-repeat-v6",
+  "ranking_method_version": "trend-zodiac-first-v3",
+  "seed": 20260831,
+  "regular": [
+    {
+      "number": 4,
+      "zodiac": "兔",
+      "score": 0.057382,
+      "components": {
+        "history": 0.005113,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.013935,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 7,
+      "zodiac": "鼠",
+      "score": 0.100825,
+      "components": {
+        "history": 0.006617,
+        "recent30": 0.033333,
+        "recent10": 0.03,
+        "ewma": 0.030875,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 8,
+      "zodiac": "猪",
+      "score": 0.060699,
+      "components": {
+        "history": 0.004211,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.018156,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 11,
+      "zodiac": "猴",
+      "score": 0.057335,
+      "components": {
+        "history": 0.004211,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.014791,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 26,
+      "zodiac": "蛇",
+      "score": 0.058245,
+      "components": {
+        "history": 0.00391,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.016001,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 42,
+      "zodiac": "牛",
+      "score": 0.063624,
+      "components": {
+        "history": 0.004511,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.02078,
+        "overdue": 0.0
+      }
+    }
+  ],
+  "regular_three": [
+    {
+      "number": 7,
+      "zodiac": "鼠",
+      "score": 0.100825,
+      "components": {
+        "history": 0.006617,
+        "recent30": 0.033333,
+        "recent10": 0.03,
+        "ewma": 0.030875,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 42,
+      "zodiac": "牛",
+      "score": 0.063624,
+      "components": {
+        "history": 0.004511,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.02078,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 8,
+      "zodiac": "猪",
+      "score": 0.060699,
+      "components": {
+        "history": 0.004211,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.018156,
+        "overdue": 0.0
+      }
+    }
+  ],
+  "top_special_zodiac": {
+    "zodiac": "马",
+    "score": 0.132201,
+    "components": {
+      "history": 0.018947,
+      "recent30": 0.025,
+      "recent10": 0.06,
+      "ewma": 0.028253,
+      "overdue": 0.0
+    }
+  },
+  "ranked_special_zodiacs": [
+    {
+      "zodiac": "猴",
+      "score": 0.2347,
+      "components": {
+        "history": 0.025263,
+        "recent30": 0.058333,
+        "recent10": 0.09,
+        "ewma": 0.061104,
+        "overdue": 0.0
+      }
+    },
+    {
+      "zodiac": "马",
+      "score": 0.132201,
+      "components": {
+        "history": 0.018947,
+        "recent30": 0.025,
+        "recent10": 0.06,
+        "ewma": 0.028253,
+        "overdue": 0.0
+      }
+    },
+    {
+      "zodiac": "鸡",
+      "score": 0.11278,
+      "components": {
+        "history": 0.023158,
+        "recent30": 0.033333,
+        "recent10": 0.03,
+        "ewma": 0.026289,
+        "overdue": 0.0
+      }
+    }
+  ],
+  "special": {
+    "number": 13,
+    "zodiac": "马",
+    "score": 0.067919,
+    "components": {
+      "history": 0.008421,
+      "recent30": 0.016667,
+      "recent10": 0.03,
+      "ewma": 0.012832,
+      "overdue": 0.0
+    }
+  },
+  "numbers_in_top_zodiac": [
+    {
+      "number": 13,
+      "zodiac": "马",
+      "score": 0.067919,
+      "components": {
+        "history": 0.008421,
+        "recent30": 0.016667,
+        "recent10": 0.03,
+        "ewma": 0.012832,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 49,
+      "zodiac": "马",
+      "score": 0.060759,
+      "components": {
+        "history": 0.008421,
+        "recent30": 0.008333,
+        "recent10": 0.03,
+        "ewma": 0.014005,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 1,
+      "zodiac": "马",
+      "score": 0.005632,
+      "components": {
+        "history": 0.004211,
+        "recent30": 0.0,
+        "recent10": 0.0,
+        "ewma": 0.001421,
+        "overdue": 0.0
+      }
+    },
+    {
+      "number": 37,
+      "zodiac": "马",
+      "score": 0.0,
+      "components": {
+        "history": 0.0,
+        "recent30": 0.0,
+        "recent10": 0.0,
+        "ewma": 0.0,
+        "overdue": 0.0
+      }
+    }
+  ],
+  "random_selection": {
+    "uniform_mix": 0.3,
+    "zodiac_draw": 0.1993632986,
+    "zodiac_probabilities": {
+      "猴": 0.197515,
+      "马": 0.123166,
+      "鸡": 0.109079,
+      "鼠": 0.100326,
+      "虎": 0.092359,
+      "蛇": 0.083641,
+      "牛": 0.079383,
+      "龙": 0.068984,
+      "猪": 0.059488,
+      "羊": 0.048628,
+      "狗": 0.037432
+    },
+    "number_draw": 0.188527888816,
+    "number_probabilities": {
+      "13": 0.413983,
+      "49": 0.376666,
+      "1": 0.089351,
+      "37": 0.06,
+      "25": 0.06
+    }
+  },
+  "selection_constraints": {
+    "no_repeat_after_previous_special_miss": true,
+    "excluded_special_zodiac": "兔",
+    "excluded_special_number": 28,
+    "unconstrained_top_special_zodiac": "猴"
+  },
+  "weights": {
+    "history": 0.2,
+    "recent30": 0.25,
+    "recent10": 0.3,
+    "ewma_half_life_8": 0.25,
+    "overdue": 0.0
+  },
+  "disclaimer": "仅供统计娱乐；走势排名不是开奖概率，随机开奖无法被可靠预测。",
+  "forecast_assessment": {
+    "status": "no_demonstrated_edge",
+    "strong_pick": false,
+    "ranking_margin": 0.102499,
+    "random_zodiac_baseline": 0.083333,
+    "walk_forward": {
+      "folds": 65,
+      "hits": 4,
+      "accuracy": 0.061538,
+      "wilson_95": [
+        0.024189,
+        0.147824
+      ]
+    },
+    "saved_reviews": {
+      "count": 9,
+      "hits": 1,
+      "accuracy": 0.111111,
+      "wilson_95": [
+        0.01989,
+        0.435006
+      ]
+    },
+    "decision_rule": "Strong pick requires at least 60 walk-forward folds and 20 saved reviews, with both 95% lower bounds above the 1/12 random-zodiac baseline."
+  }
+}

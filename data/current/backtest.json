@@ -1,0 +1,2870 @@
+{
+  "schema": "lottery-backtest/v1",
+  "method_version": "trend-v3",
+  "no_repeat_enabled": true,
+  "folds": 67,
+  "first_target_issue": "031",
+  "last_target_issue": "097",
+  "special_zodiac_hits": 5,
+  "special_zodiac_accuracy": 0.07462686567164178,
+  "special_number_hits": 2,
+  "special_number_accuracy": 0.029850746268656716,
+  "special_zodiac_top3_hits": 15,
+  "special_zodiac_top3_accuracy": 0.22388059701492538,
+  "special_number_top4_hits": 5,
+  "special_number_top4_accuracy": 0.07462686567164178,
+  "average_regular_hits": 0.6268656716417911,
+  "flat_zodiac_folds": 67,
+  "flat_zodiac_hits": 36,
+  "flat_zodiac_accuracy": 0.5373134328358209,
+  "regular_three_exact_hits": 0,
+  "regular_three_exact_accuracy": 0.0,
+  "average_regular_three_hits": 0.34328358208955223,
+  "no_repeat_constraint_folds": 64,
+  "chronological_segments": [
+    {
+      "name": "early",
+      "first_target_issue": "031",
+      "last_target_issue": "052",
+      "folds": 22,
+      "special_zodiac_accuracy": 0.045454545454545456,
+      "special_number_accuracy": 0.045454545454545456,
+      "special_zodiac_top3_accuracy": 0.3181818181818182,
+      "flat_zodiac_accuracy": 0.7272727272727273
+    },
+    {
+      "name": "middle",
+      "first_target_issue": "053",
+      "last_target_issue": "074",
+      "folds": 22,
+      "special_zodiac_accuracy": 0.0,
+      "special_number_accuracy": 0.0,
+      "special_zodiac_top3_accuracy": 0.18181818181818182,
+      "flat_zodiac_accuracy": 0.45454545454545453
+    },
+    {
+      "name": "recent",
+      "first_target_issue": "075",
+      "last_target_issue": "097",
+      "folds": 23,
+      "special_zodiac_accuracy": 0.17391304347826086,
+      "special_number_accuracy": 0.043478260869565216,
+      "special_zodiac_top3_accuracy": 0.17391304347826086,
+      "flat_zodiac_accuracy": 0.43478260869565216
+    }
+  ],
+  "rows": [
+    {
+      "cutoff_issue": "030",
+      "target_issue": "031",
+      "actual_issue": "031",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260841,
+      "prediction_created_at": "2026-09-10T06:06:11.772023+00:00",
+      "predicted_special_number": 15,
+      "actual_special_number": 24,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "龙",
+      "actual_special_zodiac": "羊",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "虎",
+      "actual_all_zodiacs": [
+        "牛",
+        "狗",
+        "猴",
+        "羊",
+        "虎"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        45,
+        2,
+        13
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 9
+    },
+    {
+      "cutoff_issue": "031",
+      "target_issue": "032",
+      "actual_issue": "032",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260842,
+      "prediction_created_at": "2026-09-10T06:06:11.775446+00:00",
+      "predicted_special_number": 45,
+      "actual_special_number": 7,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "狗",
+      "actual_special_zodiac": "鼠",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鸡",
+      "actual_all_zodiacs": [
+        "牛",
+        "狗",
+        "猪",
+        "蛇",
+        "马",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        18,
+        24,
+        23
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 38
+    },
+    {
+      "cutoff_issue": "032",
+      "target_issue": "033",
+      "actual_issue": "033",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260843,
+      "prediction_created_at": "2026-09-10T06:06:11.779025+00:00",
+      "predicted_special_number": 31,
+      "actual_special_number": 3,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鼠",
+      "actual_special_zodiac": "龙",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "猴",
+      "actual_all_zodiacs": [
+        "兔",
+        "猴",
+        "羊",
+        "虎",
+        "马",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        9,
+        49,
+        6
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 28
+    },
+    {
+      "cutoff_issue": "033",
+      "target_issue": "034",
+      "actual_issue": "034",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260844,
+      "prediction_created_at": "2026-09-10T06:06:11.782655+00:00",
+      "predicted_special_number": 29,
+      "actual_special_number": 19,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "虎",
+      "actual_special_zodiac": "鼠",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "牛",
+      "actual_all_zodiacs": [
+        "牛",
+        "狗",
+        "猴",
+        "蛇",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        23,
+        37,
+        9
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 10
+    },
+    {
+      "cutoff_issue": "034",
+      "target_issue": "035",
+      "actual_issue": "035",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260845,
+      "prediction_created_at": "2026-09-10T06:06:11.786911+00:00",
+      "predicted_special_number": 3,
+      "actual_special_number": 44,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "龙",
+      "actual_special_zodiac": "猪",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鸡",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "猪",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        19
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        27,
+        11,
+        26
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        19
+      ],
+      "special_abs_error": 41
+    },
+    {
+      "cutoff_issue": "035",
+      "target_issue": "036",
+      "actual_issue": "036",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260846,
+      "prediction_created_at": "2026-09-10T06:06:11.790376+00:00",
+      "predicted_special_number": 4,
+      "actual_special_number": 43,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "兔",
+      "actual_special_zodiac": "鼠",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鼠",
+      "actual_all_zodiacs": [
+        "兔",
+        "狗",
+        "猪",
+        "猴",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        28,
+        45
+      ],
+      "regular_hit_count": 2,
+      "predicted_regular_three": [
+        19,
+        44,
+        28
+      ],
+      "regular_three_hits": [
+        28
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        28,
+        45
+      ],
+      "special_abs_error": 39
+    },
+    {
+      "cutoff_issue": "036",
+      "target_issue": "037",
+      "actual_issue": "037",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260847,
+      "prediction_created_at": "2026-09-10T06:06:11.793849+00:00",
+      "predicted_special_number": 45,
+      "actual_special_number": 49,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "狗",
+      "actual_special_zodiac": "马",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "狗",
+        "猪",
+        "猴",
+        "虎",
+        "马",
+        "鸡"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        28,
+        20,
+        32
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 4
+    },
+    {
+      "cutoff_issue": "037",
+      "target_issue": "038",
+      "actual_issue": "038",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260848,
+      "prediction_created_at": "2026-09-10T06:06:11.798278+00:00",
+      "predicted_special_number": 44,
+      "actual_special_number": 40,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "兔",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": true,
+      "predicted_flat_zodiac": "马",
+      "actual_all_zodiacs": [
+        "兔",
+        "狗",
+        "猪",
+        "羊",
+        "马",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        28,
+        49,
+        8
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        44
+      ],
+      "special_abs_error": 4
+    },
+    {
+      "cutoff_issue": "038",
+      "target_issue": "039",
+      "actual_issue": "039",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260849,
+      "prediction_created_at": "2026-09-10T06:06:11.801750+00:00",
+      "predicted_special_number": 23,
+      "actual_special_number": 2,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猴",
+      "actual_special_zodiac": "蛇",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "猪",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "猴",
+        "虎",
+        "蛇"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        40
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        45,
+        40,
+        44
+      ],
+      "regular_three_hits": [
+        40
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        40
+      ],
+      "special_abs_error": 21
+    },
+    {
+      "cutoff_issue": "039",
+      "target_issue": "040",
+      "actual_issue": "040",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260850,
+      "prediction_created_at": "2026-09-10T06:06:11.805246+00:00",
+      "predicted_special_number": 31,
+      "actual_special_number": 18,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鼠",
+      "actual_special_zodiac": "牛",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "狗",
+      "actual_all_zodiacs": [
+        "牛",
+        "狗",
+        "猪",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        40,
+        28,
+        2
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 13
+    },
+    {
+      "cutoff_issue": "040",
+      "target_issue": "041",
+      "actual_issue": "041",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260851,
+      "prediction_created_at": "2026-09-10T06:06:11.808732+00:00",
+      "predicted_special_number": 14,
+      "actual_special_number": 15,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "蛇",
+      "actual_special_zodiac": "龙",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": true,
+      "predicted_flat_zodiac": "猪",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "猪",
+        "羊",
+        "蛇",
+        "鸡",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        28,
+        44,
+        46
+      ],
+      "regular_hit_count": 3,
+      "predicted_regular_three": [
+        44,
+        33,
+        8
+      ],
+      "regular_three_hits": [
+        44
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        14,
+        28,
+        44,
+        46
+      ],
+      "special_abs_error": 1
+    },
+    {
+      "cutoff_issue": "041",
+      "target_issue": "042",
+      "actual_issue": "042",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260852,
+      "prediction_created_at": "2026-09-10T06:06:11.812630+00:00",
+      "predicted_special_number": 48,
+      "actual_special_number": 34,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "羊",
+      "actual_special_zodiac": "鸡",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鸡",
+      "actual_all_zodiacs": [
+        "猪",
+        "虎",
+        "鸡",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        46
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        44,
+        46,
+        28
+      ],
+      "regular_three_hits": [
+        46
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        46
+      ],
+      "special_abs_error": 14
+    },
+    {
+      "cutoff_issue": "042",
+      "target_issue": "043",
+      "actual_issue": "043",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260853,
+      "prediction_created_at": "2026-09-10T06:06:11.817119+00:00",
+      "predicted_special_number": 33,
+      "actual_special_number": 40,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "狗",
+      "actual_special_zodiac": "兔",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": true,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "兔",
+        "猪",
+        "猴",
+        "蛇",
+        "鸡"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        46,
+        17,
+        34
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 7
+    },
+    {
+      "cutoff_issue": "043",
+      "target_issue": "044",
+      "actual_issue": "044",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260854,
+      "prediction_created_at": "2026-09-10T06:06:11.820794+00:00",
+      "predicted_special_number": 2,
+      "actual_special_number": 8,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "蛇",
+      "actual_special_zodiac": "猪",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "狗",
+        "猪",
+        "猴",
+        "羊",
+        "蛇",
+        "马"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        44,
+        40,
+        26
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 6
+    },
+    {
+      "cutoff_issue": "044",
+      "target_issue": "045",
+      "actual_issue": "045",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260855,
+      "prediction_created_at": "2026-09-10T06:06:11.824374+00:00",
+      "predicted_special_number": 12,
+      "actual_special_number": 9,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "羊",
+      "actual_special_zodiac": "狗",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "马",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "羊",
+        "鸡"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        37,
+        8,
+        45
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 3
+    },
+    {
+      "cutoff_issue": "045",
+      "target_issue": "046",
+      "actual_issue": "046",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260856,
+      "prediction_created_at": "2026-09-10T06:06:11.829240+00:00",
+      "predicted_special_number": 34,
+      "actual_special_number": 9,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鸡",
+      "actual_special_zodiac": "狗",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": true,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "龙",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "猪",
+        "羊",
+        "蛇",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        46,
+        4,
+        9
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        9
+      ],
+      "special_abs_error": 25
+    },
+    {
+      "cutoff_issue": "046",
+      "target_issue": "047",
+      "actual_issue": "047",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260857,
+      "prediction_created_at": "2026-09-10T06:06:11.833295+00:00",
+      "predicted_special_number": 9,
+      "actual_special_number": 4,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "狗",
+      "actual_special_zodiac": "兔",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鸡",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "猪",
+        "猴",
+        "蛇",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        2,
+        8
+      ],
+      "regular_hit_count": 2,
+      "predicted_regular_three": [
+        2,
+        48,
+        8
+      ],
+      "regular_three_hits": [
+        2,
+        8
+      ],
+      "regular_three_hit_count": 2,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        2,
+        4,
+        8
+      ],
+      "special_abs_error": 5
+    },
+    {
+      "cutoff_issue": "047",
+      "target_issue": "048",
+      "actual_issue": "048",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260858,
+      "prediction_created_at": "2026-09-10T06:06:11.837182+00:00",
+      "predicted_special_number": 4,
+      "actual_special_number": 49,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "兔",
+      "actual_special_zodiac": "马",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "牛",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "猪",
+        "猴",
+        "蛇",
+        "马",
+        "鸡"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        2,
+        8,
+        9
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 45
+    },
+    {
+      "cutoff_issue": "048",
+      "target_issue": "049",
+      "actual_issue": "049",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260859,
+      "prediction_created_at": "2026-09-10T06:06:11.840908+00:00",
+      "predicted_special_number": 8,
+      "actual_special_number": 8,
+      "special_number_hit": true,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "猪",
+      "special_zodiac_hit": true,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "牛",
+      "actual_all_zodiacs": [
+        "牛",
+        "狗",
+        "猪",
+        "猴",
+        "虎",
+        "蛇"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        28,
+        4,
+        6
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        8
+      ],
+      "special_abs_error": 0
+    },
+    {
+      "cutoff_issue": "049",
+      "target_issue": "050",
+      "actual_issue": "050",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260860,
+      "prediction_created_at": "2026-09-10T06:06:11.845226+00:00",
+      "predicted_special_number": 9,
+      "actual_special_number": 40,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "狗",
+      "actual_special_zodiac": "兔",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "兔",
+        "猴",
+        "马",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        47
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        8,
+        47,
+        42
+      ],
+      "regular_three_hits": [
+        47
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        47
+      ],
+      "special_abs_error": 31
+    },
+    {
+      "cutoff_issue": "050",
+      "target_issue": "051",
+      "actual_issue": "051",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260861,
+      "prediction_created_at": "2026-09-10T06:06:11.849080+00:00",
+      "predicted_special_number": 48,
+      "actual_special_number": 28,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "羊",
+      "actual_special_zodiac": "兔",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "蛇",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "猴",
+        "鸡",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        47
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        47,
+        4,
+        8
+      ],
+      "regular_three_hits": [
+        47
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        47
+      ],
+      "special_abs_error": 20
+    },
+    {
+      "cutoff_issue": "051",
+      "target_issue": "052",
+      "actual_issue": "052",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260862,
+      "prediction_created_at": "2026-09-10T06:06:11.853112+00:00",
+      "predicted_special_number": 19,
+      "actual_special_number": 22,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鼠",
+      "actual_special_zodiac": "鸡",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "兔",
+        "猴",
+        "羊",
+        "虎",
+        "马",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        28
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        47,
+        28,
+        34
+      ],
+      "regular_three_hits": [
+        28
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        28
+      ],
+      "special_abs_error": 3
+    },
+    {
+      "cutoff_issue": "052",
+      "target_issue": "053",
+      "actual_issue": "053",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260863,
+      "prediction_created_at": "2026-09-10T06:06:11.857076+00:00",
+      "predicted_special_number": 3,
+      "actual_special_number": 19,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "龙",
+      "actual_special_zodiac": "鼠",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "龙",
+      "actual_all_zodiacs": [
+        "兔",
+        "狗",
+        "猪",
+        "蛇",
+        "马",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        28,
+        22,
+        25
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 16
+    },
+    {
+      "cutoff_issue": "053",
+      "target_issue": "054",
+      "actual_issue": "054",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260864,
+      "prediction_created_at": "2026-09-10T06:06:11.861673+00:00",
+      "predicted_special_number": 8,
+      "actual_special_number": 16,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "兔",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "猪",
+      "actual_all_zodiacs": [
+        "兔",
+        "虎",
+        "马",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        27
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        4,
+        19,
+        27
+      ],
+      "regular_three_hits": [
+        27
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        27
+      ],
+      "special_abs_error": 8
+    },
+    {
+      "cutoff_issue": "054",
+      "target_issue": "055",
+      "actual_issue": "055",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260865,
+      "prediction_created_at": "2026-09-10T06:06:11.865603+00:00",
+      "predicted_special_number": 48,
+      "actual_special_number": 8,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "羊",
+      "actual_special_zodiac": "猪",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "羊",
+      "actual_all_zodiacs": [
+        "牛",
+        "猪",
+        "猴",
+        "蛇",
+        "马",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        27,
+        16,
+        19
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 40
+    },
+    {
+      "cutoff_issue": "055",
+      "target_issue": "056",
+      "actual_issue": "056",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260866,
+      "prediction_created_at": "2026-09-10T06:06:11.869705+00:00",
+      "predicted_special_number": 4,
+      "actual_special_number": 33,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "兔",
+      "actual_special_zodiac": "狗",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "猴",
+      "actual_all_zodiacs": [
+        "牛",
+        "狗",
+        "猪",
+        "猴",
+        "鸡"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        2,
+        7,
+        20
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 29
+    },
+    {
+      "cutoff_issue": "056",
+      "target_issue": "057",
+      "actual_issue": "057",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260867,
+      "prediction_created_at": "2026-09-10T06:06:11.873973+00:00",
+      "predicted_special_number": 44,
+      "actual_special_number": 47,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "猴",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "龙",
+      "actual_all_zodiacs": [
+        "兔",
+        "猴",
+        "马",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        47,
+        11,
+        33
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        47
+      ],
+      "special_abs_error": 3
+    },
+    {
+      "cutoff_issue": "057",
+      "target_issue": "058",
+      "actual_issue": "058",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260868,
+      "prediction_created_at": "2026-09-10T06:06:11.878336+00:00",
+      "predicted_special_number": 43,
+      "actual_special_number": 42,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鼠",
+      "actual_special_zodiac": "牛",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鸡",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "羊",
+        "虎",
+        "马",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        40
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        47,
+        7,
+        13
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        40
+      ],
+      "special_abs_error": 1
+    },
+    {
+      "cutoff_issue": "058",
+      "target_issue": "059",
+      "actual_issue": "059",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260869,
+      "prediction_created_at": "2026-09-10T06:06:11.882336+00:00",
+      "predicted_special_number": 46,
+      "actual_special_number": 20,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鸡",
+      "actual_special_zodiac": "猪",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "兔",
+        "狗",
+        "猪",
+        "猴",
+        "蛇",
+        "马"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        47,
+        42,
+        40
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 26
+    },
+    {
+      "cutoff_issue": "059",
+      "target_issue": "060",
+      "actual_issue": "060",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260870,
+      "prediction_created_at": "2026-09-10T06:06:11.887030+00:00",
+      "predicted_special_number": 19,
+      "actual_special_number": 44,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鼠",
+      "actual_special_zodiac": "猪",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "马",
+      "actual_all_zodiacs": [
+        "兔",
+        "猪",
+        "猴",
+        "马",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        37
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        35,
+        20,
+        37
+      ],
+      "regular_three_hits": [
+        37
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        37
+      ],
+      "special_abs_error": 25
+    },
+    {
+      "cutoff_issue": "060",
+      "target_issue": "061",
+      "actual_issue": "061",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260871,
+      "prediction_created_at": "2026-09-10T06:06:11.891174+00:00",
+      "predicted_special_number": 12,
+      "actual_special_number": 46,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "羊",
+      "actual_special_zodiac": "鸡",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": true,
+      "predicted_flat_zodiac": "羊",
+      "actual_all_zodiacs": [
+        "猪",
+        "羊",
+        "虎",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        37,
+        47,
+        43
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        12
+      ],
+      "special_abs_error": 34
+    },
+    {
+      "cutoff_issue": "061",
+      "target_issue": "062",
+      "actual_issue": "062",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260872,
+      "prediction_created_at": "2026-09-10T06:06:11.895578+00:00",
+      "predicted_special_number": 4,
+      "actual_special_number": 30,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "兔",
+      "actual_special_zodiac": "牛",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鼠",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "猪",
+        "猴",
+        "蛇"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        20,
+        12,
+        37
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 26
+    },
+    {
+      "cutoff_issue": "062",
+      "target_issue": "063",
+      "actual_issue": "063",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260873,
+      "prediction_created_at": "2026-09-10T06:06:11.899835+00:00",
+      "predicted_special_number": 42,
+      "actual_special_number": 27,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "牛",
+      "actual_special_zodiac": "龙",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鼠",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "虎",
+        "鸡",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        14,
+        30,
+        33
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 15
+    },
+    {
+      "cutoff_issue": "063",
+      "target_issue": "064",
+      "actual_issue": "064",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260874,
+      "prediction_created_at": "2026-09-10T06:06:11.905061+00:00",
+      "predicted_special_number": 43,
+      "actual_special_number": 1,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鼠",
+      "actual_special_zodiac": "马",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "羊",
+      "actual_all_zodiacs": [
+        "猪",
+        "猴",
+        "羊",
+        "虎",
+        "马",
+        "鸡"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        10
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        27,
+        9,
+        28
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        10
+      ],
+      "special_abs_error": 42
+    },
+    {
+      "cutoff_issue": "064",
+      "target_issue": "065",
+      "actual_issue": "065",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260875,
+      "prediction_created_at": "2026-09-10T06:06:11.909595+00:00",
+      "predicted_special_number": 46,
+      "actual_special_number": 24,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鸡",
+      "actual_special_zodiac": "羊",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "狗",
+      "actual_all_zodiacs": [
+        "牛",
+        "猪",
+        "猴",
+        "羊",
+        "蛇",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        12,
+        10,
+        29
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 22
+    },
+    {
+      "cutoff_issue": "065",
+      "target_issue": "066",
+      "actual_issue": "066",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260876,
+      "prediction_created_at": "2026-09-10T06:06:11.914324+00:00",
+      "predicted_special_number": 32,
+      "actual_special_number": 46,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "鸡",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": true,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "羊",
+      "actual_all_zodiacs": [
+        "兔",
+        "虎",
+        "鸡",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        6,
+        26,
+        24
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 14
+    },
+    {
+      "cutoff_issue": "066",
+      "target_issue": "067",
+      "actual_issue": "067",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260877,
+      "prediction_created_at": "2026-09-10T06:06:11.919426+00:00",
+      "predicted_special_number": 1,
+      "actual_special_number": 10,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "马",
+      "actual_special_zodiac": "鸡",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "猴",
+      "actual_all_zodiacs": [
+        "虎",
+        "蛇",
+        "马",
+        "鸡",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        15
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        10,
+        46,
+        6
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        10,
+        15
+      ],
+      "special_abs_error": 9
+    },
+    {
+      "cutoff_issue": "067",
+      "target_issue": "068",
+      "actual_issue": "068",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260878,
+      "prediction_created_at": "2026-09-10T06:06:11.923826+00:00",
+      "predicted_special_number": 19,
+      "actual_special_number": 29,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鼠",
+      "actual_special_zodiac": "虎",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": true,
+      "predicted_flat_zodiac": "羊",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "猪",
+        "羊",
+        "虎",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        15,
+        10,
+        34
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        19
+      ],
+      "special_abs_error": 10
+    },
+    {
+      "cutoff_issue": "068",
+      "target_issue": "069",
+      "actual_issue": "069",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260879,
+      "prediction_created_at": "2026-09-10T06:06:11.928457+00:00",
+      "predicted_special_number": 8,
+      "actual_special_number": 35,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "猴",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "龙",
+      "actual_all_zodiacs": [
+        "兔",
+        "猪",
+        "猴",
+        "虎",
+        "蛇",
+        "马",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        16,
+        20,
+        10
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 27
+    },
+    {
+      "cutoff_issue": "069",
+      "target_issue": "070",
+      "actual_issue": "070",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260880,
+      "prediction_created_at": "2026-09-10T06:06:11.933398+00:00",
+      "predicted_special_number": 27,
+      "actual_special_number": 13,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "龙",
+      "actual_special_zodiac": "马",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "牛",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "羊",
+        "虎",
+        "蛇",
+        "马",
+        "鸡"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        40
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        5,
+        7,
+        35
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        40
+      ],
+      "special_abs_error": 14
+    },
+    {
+      "cutoff_issue": "070",
+      "target_issue": "071",
+      "actual_issue": "071",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260881,
+      "prediction_created_at": "2026-09-10T06:06:11.938117+00:00",
+      "predicted_special_number": 21,
+      "actual_special_number": 43,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "狗",
+      "actual_special_zodiac": "鼠",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "虎",
+        "蛇",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        5,
+        17
+      ],
+      "regular_hit_count": 2,
+      "predicted_regular_three": [
+        40,
+        12,
+        13
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        5,
+        17
+      ],
+      "special_abs_error": 22
+    },
+    {
+      "cutoff_issue": "071",
+      "target_issue": "072",
+      "actual_issue": "072",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260882,
+      "prediction_created_at": "2026-09-10T06:06:11.942715+00:00",
+      "predicted_special_number": 1,
+      "actual_special_number": 44,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "马",
+      "actual_special_zodiac": "猪",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "猪",
+        "蛇",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        31
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        17,
+        26,
+        5
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        31
+      ],
+      "special_abs_error": 43
+    },
+    {
+      "cutoff_issue": "072",
+      "target_issue": "073",
+      "actual_issue": "073",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260883,
+      "prediction_created_at": "2026-09-10T06:06:11.948000+00:00",
+      "predicted_special_number": 42,
+      "actual_special_number": 27,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "牛",
+      "actual_special_zodiac": "龙",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "羊",
+      "actual_all_zodiacs": [
+        "羊",
+        "虎",
+        "马",
+        "鸡",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        31,
+        14,
+        19
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 15
+    },
+    {
+      "cutoff_issue": "073",
+      "target_issue": "074",
+      "actual_issue": "074",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260884,
+      "prediction_created_at": "2026-09-10T06:06:11.954147+00:00",
+      "predicted_special_number": 22,
+      "actual_special_number": 28,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鸡",
+      "actual_special_zodiac": "兔",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "蛇",
+        "马",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        5,
+        43,
+        34
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 6
+    },
+    {
+      "cutoff_issue": "074",
+      "target_issue": "075",
+      "actual_issue": "075",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260885,
+      "prediction_created_at": "2026-09-10T06:06:11.958617+00:00",
+      "predicted_special_number": 8,
+      "actual_special_number": 43,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "鼠",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鼠",
+      "actual_all_zodiacs": [
+        "猴",
+        "虎",
+        "蛇",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        5
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        38,
+        28,
+        5
+      ],
+      "regular_three_hits": [
+        5
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        5,
+        43
+      ],
+      "special_abs_error": 35
+    },
+    {
+      "cutoff_issue": "075",
+      "target_issue": "076",
+      "actual_issue": "076",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260886,
+      "prediction_created_at": "2026-09-10T06:06:11.964049+00:00",
+      "predicted_special_number": 45,
+      "actual_special_number": 17,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "狗",
+      "actual_special_zodiac": "虎",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鼠",
+      "actual_all_zodiacs": [
+        "兔",
+        "猪",
+        "虎",
+        "鸡",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        43,
+        7,
+        5
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 28
+    },
+    {
+      "cutoff_issue": "076",
+      "target_issue": "077",
+      "actual_issue": "077",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260887,
+      "prediction_created_at": "2026-09-10T06:06:11.969113+00:00",
+      "predicted_special_number": 8,
+      "actual_special_number": 27,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "龙",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": true,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鸡",
+      "actual_all_zodiacs": [
+        "牛",
+        "狗",
+        "猪",
+        "蛇",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        44
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        27,
+        44,
+        43
+      ],
+      "regular_three_hits": [
+        44
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        27,
+        44
+      ],
+      "special_abs_error": 19
+    },
+    {
+      "cutoff_issue": "077",
+      "target_issue": "078",
+      "actual_issue": "078",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260888,
+      "prediction_created_at": "2026-09-10T06:06:11.973758+00:00",
+      "predicted_special_number": 48,
+      "actual_special_number": 8,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "羊",
+      "actual_special_zodiac": "猪",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鸡",
+      "actual_all_zodiacs": [
+        "牛",
+        "狗",
+        "猪",
+        "猴",
+        "虎",
+        "马"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        27,
+        44,
+        21
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 40
+    },
+    {
+      "cutoff_issue": "078",
+      "target_issue": "079",
+      "actual_issue": "079",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260889,
+      "prediction_created_at": "2026-09-10T06:06:11.979272+00:00",
+      "predicted_special_number": 43,
+      "actual_special_number": 23,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鼠",
+      "actual_special_zodiac": "猴",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "羊",
+      "actual_all_zodiacs": [
+        "兔",
+        "猪",
+        "猴",
+        "虎",
+        "鸡",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        41,
+        27,
+        44
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 20
+    },
+    {
+      "cutoff_issue": "079",
+      "target_issue": "080",
+      "actual_issue": "080",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260890,
+      "prediction_created_at": "2026-09-10T06:06:11.984075+00:00",
+      "predicted_special_number": 46,
+      "actual_special_number": 11,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鸡",
+      "actual_special_zodiac": "猴",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "龙",
+      "actual_all_zodiacs": [
+        "牛",
+        "猴",
+        "羊",
+        "虎",
+        "蛇",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        7
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        32,
+        23,
+        7
+      ],
+      "regular_three_hits": [
+        7
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        7
+      ],
+      "special_abs_error": 35
+    },
+    {
+      "cutoff_issue": "080",
+      "target_issue": "081",
+      "actual_issue": "081",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260891,
+      "prediction_created_at": "2026-09-10T06:06:11.988870+00:00",
+      "predicted_special_number": 41,
+      "actual_special_number": 34,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "虎",
+      "actual_special_zodiac": "鸡",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鼠",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "猪",
+        "蛇",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        7
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        7,
+        26,
+        11
+      ],
+      "regular_three_hits": [
+        7
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        7
+      ],
+      "special_abs_error": 7
+    },
+    {
+      "cutoff_issue": "081",
+      "target_issue": "082",
+      "actual_issue": "082",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260892,
+      "prediction_created_at": "2026-09-10T06:06:11.994413+00:00",
+      "predicted_special_number": 28,
+      "actual_special_number": 48,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "兔",
+      "actual_special_zodiac": "羊",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "蛇",
+      "actual_all_zodiacs": [
+        "猴",
+        "羊",
+        "虎",
+        "蛇",
+        "马"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        7,
+        4,
+        34
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 20
+    },
+    {
+      "cutoff_issue": "082",
+      "target_issue": "083",
+      "actual_issue": "083",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260893,
+      "prediction_created_at": "2026-09-10T06:06:11.999347+00:00",
+      "predicted_special_number": 47,
+      "actual_special_number": 23,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猴",
+      "actual_special_zodiac": "猴",
+      "special_zodiac_hit": true,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "狗",
+      "actual_all_zodiacs": [
+        "兔",
+        "猪",
+        "猴",
+        "马",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        14,
+        23,
+        4
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        23
+      ],
+      "special_abs_error": 24
+    },
+    {
+      "cutoff_issue": "083",
+      "target_issue": "084",
+      "actual_issue": "084",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260894,
+      "prediction_created_at": "2026-09-10T06:06:12.004317+00:00",
+      "predicted_special_number": 48,
+      "actual_special_number": 38,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "羊",
+      "actual_special_zodiac": "蛇",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鼠",
+      "actual_all_zodiacs": [
+        "兔",
+        "狗",
+        "猴",
+        "蛇",
+        "马",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        16
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        23,
+        7,
+        1
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        16
+      ],
+      "special_abs_error": 10
+    },
+    {
+      "cutoff_issue": "084",
+      "target_issue": "085",
+      "actual_issue": "085",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260895,
+      "prediction_created_at": "2026-09-10T06:06:12.009836+00:00",
+      "predicted_special_number": 27,
+      "actual_special_number": 3,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "龙",
+      "actual_special_zodiac": "龙",
+      "special_zodiac_hit": true,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "兔",
+      "actual_all_zodiacs": [
+        "牛",
+        "羊",
+        "虎",
+        "马",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        16,
+        4,
+        23
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 24
+    },
+    {
+      "cutoff_issue": "085",
+      "target_issue": "086",
+      "actual_issue": "086",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260896,
+      "prediction_created_at": "2026-09-10T06:06:12.015148+00:00",
+      "predicted_special_number": 5,
+      "actual_special_number": 47,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "虎",
+      "actual_special_zodiac": "猴",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "虎",
+      "actual_all_zodiacs": [
+        "猪",
+        "猴",
+        "马",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        3
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        13,
+        48,
+        3
+      ],
+      "regular_three_hits": [
+        3
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        3
+      ],
+      "special_abs_error": 42
+    },
+    {
+      "cutoff_issue": "086",
+      "target_issue": "087",
+      "actual_issue": "087",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260897,
+      "prediction_created_at": "2026-09-10T06:06:12.020538+00:00",
+      "predicted_special_number": 43,
+      "actual_special_number": 13,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "鼠",
+      "actual_special_zodiac": "马",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": true,
+      "predicted_flat_zodiac": "鼠",
+      "actual_all_zodiacs": [
+        "兔",
+        "猴",
+        "羊",
+        "马",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        3,
+        1,
+        31
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        13,
+        43
+      ],
+      "special_abs_error": 30
+    },
+    {
+      "cutoff_issue": "087",
+      "target_issue": "088",
+      "actual_issue": "088",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260898,
+      "prediction_created_at": "2026-09-10T06:06:12.026924+00:00",
+      "predicted_special_number": 13,
+      "actual_special_number": 23,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "马",
+      "actual_special_zodiac": "猴",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": true,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "猴",
+      "actual_all_zodiacs": [
+        "兔",
+        "狗",
+        "猴",
+        "羊",
+        "龙"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        47,
+        48
+      ],
+      "regular_hit_count": 2,
+      "predicted_regular_three": [
+        48,
+        11,
+        43
+      ],
+      "regular_three_hits": [
+        48
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        47,
+        48
+      ],
+      "special_abs_error": 10
+    },
+    {
+      "cutoff_issue": "088",
+      "target_issue": "089",
+      "actual_issue": "089",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260899,
+      "prediction_created_at": "2026-09-10T06:06:12.032394+00:00",
+      "predicted_special_number": 45,
+      "actual_special_number": 14,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "狗",
+      "actual_special_zodiac": "蛇",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "猴",
+      "actual_all_zodiacs": [
+        "兔",
+        "狗",
+        "蛇",
+        "马",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [],
+      "regular_hit_count": 0,
+      "predicted_regular_three": [
+        48,
+        47,
+        13
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [],
+      "special_abs_error": 31
+    },
+    {
+      "cutoff_issue": "089",
+      "target_issue": "090",
+      "actual_issue": "090",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260900,
+      "prediction_created_at": "2026-09-10T06:06:12.037853+00:00",
+      "predicted_special_number": 40,
+      "actual_special_number": 49,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "兔",
+      "actual_special_zodiac": "马",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "羊",
+      "actual_all_zodiacs": [
+        "狗",
+        "猪",
+        "虎",
+        "蛇",
+        "马",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        14
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        28,
+        27,
+        48
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        14
+      ],
+      "special_abs_error": 9
+    },
+    {
+      "cutoff_issue": "090",
+      "target_issue": "091",
+      "actual_issue": "091",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260901,
+      "prediction_created_at": "2026-09-10T06:06:12.043938+00:00",
+      "predicted_special_number": 8,
+      "actual_special_number": 34,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "鸡",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "虎",
+      "actual_all_zodiacs": [
+        "狗",
+        "羊",
+        "鸡",
+        "鼠",
+        "龙"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        7,
+        9
+      ],
+      "regular_hit_count": 2,
+      "predicted_regular_three": [
+        14,
+        49,
+        7
+      ],
+      "regular_three_hits": [
+        7
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        7,
+        9
+      ],
+      "special_abs_error": 26
+    },
+    {
+      "cutoff_issue": "091",
+      "target_issue": "092",
+      "actual_issue": "092",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260902,
+      "prediction_created_at": "2026-09-10T06:06:12.049061+00:00",
+      "predicted_special_number": 40,
+      "actual_special_number": 29,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "兔",
+      "actual_special_zodiac": "虎",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": true,
+      "predicted_flat_zodiac": "猴",
+      "actual_all_zodiacs": [
+        "兔",
+        "狗",
+        "羊",
+        "虎",
+        "马",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        7,
+        9,
+        34
+      ],
+      "regular_hit_count": 3,
+      "predicted_regular_three": [
+        7,
+        9,
+        14
+      ],
+      "regular_three_hits": [
+        7,
+        9
+      ],
+      "regular_three_hit_count": 2,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        7,
+        9,
+        34,
+        40
+      ],
+      "special_abs_error": 11
+    },
+    {
+      "cutoff_issue": "092",
+      "target_issue": "093",
+      "actual_issue": "093",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260903,
+      "prediction_created_at": "2026-09-10T06:06:12.054689+00:00",
+      "predicted_special_number": 8,
+      "actual_special_number": 7,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猪",
+      "actual_special_zodiac": "鼠",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "虎",
+      "actual_all_zodiacs": [
+        "牛",
+        "蛇",
+        "马",
+        "鸡",
+        "鼠"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        25,
+        34
+      ],
+      "regular_hit_count": 2,
+      "predicted_regular_three": [
+        7,
+        34,
+        9
+      ],
+      "regular_three_hits": [
+        34
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        7,
+        25,
+        34
+      ],
+      "special_abs_error": 1
+    },
+    {
+      "cutoff_issue": "093",
+      "target_issue": "094",
+      "actual_issue": "094",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260904,
+      "prediction_created_at": "2026-09-10T06:06:12.060154+00:00",
+      "predicted_special_number": 23,
+      "actual_special_number": 35,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "猴",
+      "actual_special_zodiac": "猴",
+      "special_zodiac_hit": true,
+      "special_zodiac_top3_hit": true,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "羊",
+      "actual_all_zodiacs": [
+        "狗",
+        "猪",
+        "猴",
+        "羊",
+        "虎",
+        "马",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        25
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        7,
+        34,
+        25
+      ],
+      "regular_three_hits": [
+        25
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        25
+      ],
+      "special_abs_error": 12
+    },
+    {
+      "cutoff_issue": "094",
+      "target_issue": "095",
+      "actual_issue": "095",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260905,
+      "prediction_created_at": "2026-09-10T06:06:12.065456+00:00",
+      "predicted_special_number": 3,
+      "actual_special_number": 42,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "龙",
+      "actual_special_zodiac": "牛",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "猪",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "猪",
+        "猴",
+        "蛇",
+        "鼠"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        7
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        25,
+        7,
+        12
+      ],
+      "regular_three_hits": [
+        7
+      ],
+      "regular_three_hit_count": 1,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        7
+      ],
+      "special_abs_error": 39
+    },
+    {
+      "cutoff_issue": "095",
+      "target_issue": "096",
+      "actual_issue": "096",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260906,
+      "prediction_created_at": "2026-09-10T06:06:12.071046+00:00",
+      "predicted_special_number": 28,
+      "actual_special_number": 28,
+      "special_number_hit": true,
+      "predicted_special_zodiac": "兔",
+      "actual_special_zodiac": "兔",
+      "special_zodiac_hit": true,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "鸡",
+      "actual_all_zodiacs": [
+        "兔",
+        "牛",
+        "狗",
+        "蛇"
+      ],
+      "flat_zodiac_hit": false,
+      "regular_hits": [
+        26
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        7,
+        42,
+        8
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        26,
+        28
+      ],
+      "special_abs_error": 0
+    },
+    {
+      "cutoff_issue": "096",
+      "target_issue": "097",
+      "actual_issue": "097",
+      "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+      "seed": 20260907,
+      "prediction_created_at": "2026-09-10T06:06:12.076430+00:00",
+      "predicted_special_number": 12,
+      "actual_special_number": 38,
+      "special_number_hit": false,
+      "predicted_special_zodiac": "羊",
+      "actual_special_zodiac": "蛇",
+      "special_zodiac_hit": false,
+      "special_zodiac_top3_hit": false,
+      "special_number_top4_hit": false,
+      "special_pick_regular_hit": false,
+      "predicted_flat_zodiac": "狗",
+      "actual_all_zodiacs": [
+        "兔",
+        "狗",
+        "猴",
+        "虎",
+        "蛇"
+      ],
+      "flat_zodiac_hit": true,
+      "regular_hits": [
+        28
+      ],
+      "regular_hit_count": 1,
+      "predicted_regular_three": [
+        7,
+        26,
+        30
+      ],
+      "regular_three_hits": [],
+      "regular_three_hit_count": 0,
+      "regular_three_exact_hit": false,
+      "any_overlap": [
+        28
+      ],
+      "special_abs_error": 26
+    }
+  ]
+}

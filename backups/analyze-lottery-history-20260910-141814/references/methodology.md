@@ -10,7 +10,6 @@
 - `special_pick_regular_hit`: predicted special number occurred among the six actual regular numbers; never count it as a special hit.
 - `any_overlap`: intersection of all seven predicted and actual numbers.
 - `special_abs_error`: descriptive numeric distance only; lottery numbers are categorical outcomes.
-- `flat_zodiac_hit`: true when the one saved `flat_zodiac` appears in any of the seven actual positions. Count at most one hit per issue, regardless of repeated appearances.
 - Keep cumulative and rolling 10/20-review rates for special number and zodiac.
 
 ## Trend model v3
@@ -28,12 +27,6 @@ Treat gap as descriptive metadata only. Never infer that a long absence increase
 ## Regular 3-of-3 rule
 
 Select the six regular candidates with the existing v3 process. Rank those six by trend score descending, breaking exact ties by number ascending, and save the first three as `regular_three`. Keep this rule fixed across saved predictions and walk-forward folds. Report exact 3-of-3 accuracy separately from average hits; do not tune the rule after a single draw.
-
-## Flat-zodiac rule
-
-Score the twelve zodiacs using all seven historical positions and the active fixed model configuration. Use an RNG stream derived independently from the prediction seed and sample once with the 70% normalized-trend / 30% uniform mixture. Save the selected zodiac, score components, draw, and distribution. This is separate from the special-position zodiac and is not affected by the special no-repeat constraint.
-
-Review against the set of zodiac labels appearing in all seven actual positions. Any occurrence is one issue-level hit. Genuine accuracy begins only with forecasts that saved this field before the draw; do not infer historical picks from later data. Walk-forward backtests must reproduce the same seeded rule and remain separate from genuine results.
 
 ## Analysis features
 

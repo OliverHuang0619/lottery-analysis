@@ -1,0 +1,25 @@
+{
+  "correction_of": "review-089.json",
+  "correction_reason": "Issue 089 result corrected from user-verified data on 2026-08-15",
+  "cutoff_issue": "088",
+  "target_issue": "089",
+  "actual_issue": "089",
+  "method_version": "special-zodiac-first-v2",
+  "seed": 20260814,
+  "prediction_created_at": "2026-08-14T00:10:50.973016+00:00",
+  "predicted_special_number": 19,
+  "actual_special_number": 14,
+  "special_number_hit": false,
+  "predicted_special_zodiac": "鼠",
+  "actual_special_zodiac": "蛇",
+  "special_zodiac_hit": false,
+  "special_pick_regular_hit": false,
+  "regular_hits": [
+    25
+  ],
+  "regular_hit_count": 1,
+  "any_overlap": [
+    25
+  ],
+  "special_abs_error": 5
+}

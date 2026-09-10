@@ -1,0 +1,38 @@
+{
+  "cutoff_issue": "091",
+  "target_issue": "092",
+  "actual_issue": "092",
+  "method_version": "trend-zodiac-first-v3",
+  "seed": 20260825,
+  "prediction_created_at": "2026-08-25T08:43:08.855365+00:00",
+  "predicted_special_number": 23,
+  "actual_special_number": 29,
+  "special_number_hit": false,
+  "predicted_special_zodiac": "猴",
+  "actual_special_zodiac": "虎",
+  "special_zodiac_hit": false,
+  "special_pick_regular_hit": false,
+  "regular_hits": [
+    7,
+    9,
+    34
+  ],
+  "regular_hit_count": 3,
+  "predicted_regular_three": [
+    7,
+    9,
+    14
+  ],
+  "regular_three_hits": [
+    7,
+    9
+  ],
+  "regular_three_hit_count": 2,
+  "regular_three_exact_hit": false,
+  "any_overlap": [
+    7,
+    9,
+    34
+  ],
+  "special_abs_error": 6
+}

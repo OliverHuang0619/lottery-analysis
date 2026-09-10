@@ -146,7 +146,6 @@ def predict(records, seed=20260811, excluded_special_zodiac=None, excluded_speci
     number_rank = trend_components(all_rows, lambda row: row["number"], range(1, 50), config=config)
     regular_rng = random.Random(seed ^ 0x5A17)
     special_rng = random.Random(seed)
-    flat_zodiac_rng = random.Random(seed ^ 0xF1A7)
     number_scores = {n: number_rank[n]["score"] + regular_rng.random() * 1e-12 for n in range(1, 50)}
     regular = []
     for number in sorted(number_scores, key=number_scores.get, reverse=True):
@@ -156,14 +155,6 @@ def predict(records, seed=20260811, excluded_special_zodiac=None, excluded_speci
         if len(regular) == 6:
             break
     zodiac_rank = trend_components(special_rows, lambda row: row["zodiac"], ANIMALS, config=config)
-    flat_zodiac_rank = trend_components(all_rows, lambda row: row["zodiac"], ANIMALS, config=config)
-    flat_ranked_zodiacs = sorted(ANIMALS, key=lambda z: (flat_zodiac_rank[z]["score"], z), reverse=True)
-    flat_zodiac, flat_probabilities, flat_draw = weighted_random_choice(
-        flat_zodiac_rng,
-        flat_ranked_zodiacs,
-        {z: flat_zodiac_rank[z]["score"] for z in flat_ranked_zodiacs},
-        config["uniform_mix"],
-    )
     raw_ranked_zodiacs = sorted(ANIMALS, key=lambda z: (zodiac_rank[z]["score"], z), reverse=True)
     ranked_zodiacs = [z for z in raw_ranked_zodiacs if z != excluded_special_zodiac]
     top_zodiac, zodiac_probabilities, zodiac_draw = weighted_random_choice(
@@ -198,11 +189,11 @@ def predict(records, seed=20260811, excluded_special_zodiac=None, excluded_speci
     regular_three = sorted(regular, key=lambda n: (-number_rank[n]["score"], n))[:3]
 
     return {
-        "schema": "lottery-prediction/v7",
+        "schema": "lottery-prediction/v6",
         "created_at": datetime.now(timezone.utc).isoformat(),
         "cutoff_issue": desc[0]["issue"],
         "target_issue": f"{int(desc[0]['issue']) + 1:03d}",
-        "method_version": "trend-weighted-random-calibrated-no-repeat-flat-zodiac-v7",
+        "method_version": "trend-weighted-random-calibrated-no-repeat-v6",
         "ranking_method_version": model,
         "seed": seed,
         "regular": [{"number": n, "zodiac": mapping.get(n, "未知"), **packed(number_rank[n])} for n in sorted(regular)],
@@ -214,12 +205,6 @@ def predict(records, seed=20260811, excluded_special_zodiac=None, excluded_speci
             n for n in sorted(range(1, 50), key=lambda n: (trend_components(special_rows, lambda row: row["number"], range(1, 50), config=config)[n]["score"], n), reverse=True)[:4]
         ],
         "special": {"number": special_number, "zodiac": top_zodiac, **packed(special_rank[special_number])},
-        "flat_zodiac": {"zodiac": flat_zodiac, **packed(flat_zodiac_rank[flat_zodiac])},
-        "flat_zodiac_random_selection": {
-            "uniform_mix": config["uniform_mix"],
-            "draw": round(flat_draw, 12),
-            "probabilities": {z: round(flat_probabilities[z], 6) for z in flat_ranked_zodiacs},
-        },
         "numbers_in_top_zodiac": [
             {"number": n, "zodiac": top_zodiac, **packed(special_rank[n])}
             for n in [special_number] + [value for value in ranked_numbers if value != special_number][:3]
@@ -249,8 +234,6 @@ def review(prediction, actual):
     regular_three_hits = sorted(set(predicted_regular_three) & actual_regular)
     predicted_special = prediction["special"]
     actual_special = actual["numbers"][6]
-    predicted_flat_zodiac = prediction.get("flat_zodiac", {}).get("zodiac")
-    actual_all_zodiacs = {row.get("zodiac") for row in actual["numbers"]}
     return {
         "cutoff_issue": prediction.get("cutoff_issue"),
         "target_issue": prediction.get("target_issue", actual["issue"]),
@@ -267,9 +250,6 @@ def review(prediction, actual):
         "special_zodiac_top3_hit": actual_special.get("zodiac") in prediction.get("special_zodiac_top3", []),
         "special_number_top4_hit": actual_special["number"] in prediction.get("special_number_top4", []),
         "special_pick_regular_hit": predicted_special["number"] in actual_regular,
-        "predicted_flat_zodiac": predicted_flat_zodiac,
-        "actual_all_zodiacs": sorted(actual_all_zodiacs),
-        "flat_zodiac_hit": predicted_flat_zodiac in actual_all_zodiacs if predicted_flat_zodiac else None,
         "regular_hits": sorted(predicted_regular & actual_regular),
         "regular_hit_count": len(predicted_regular & actual_regular),
         "predicted_regular_three": predicted_regular_three,
@@ -299,7 +279,6 @@ def backtest(records, min_train=30, model="trend-v3", no_repeat=True):
         previous_prediction = prediction
         previous_actual = chronological[i]
     folds = len(rows)
-    flat_rows = [row for row in rows if row["flat_zodiac_hit"] is not None]
     segment_size = max(folds // 3, 1)
     segments = []
     for index in range(3):
@@ -316,7 +295,6 @@ def backtest(records, min_train=30, model="trend-v3", no_repeat=True):
             "special_zodiac_accuracy": sum(row["special_zodiac_hit"] for row in segment) / len(segment),
             "special_number_accuracy": sum(row["special_number_hit"] for row in segment) / len(segment),
             "special_zodiac_top3_accuracy": sum(row["special_zodiac_top3_hit"] for row in segment) / len(segment),
-            "flat_zodiac_accuracy": sum(row["flat_zodiac_hit"] for row in segment if row["flat_zodiac_hit"] is not None) / max(sum(row["flat_zodiac_hit"] is not None for row in segment), 1),
         })
     return {
         "schema": "lottery-backtest/v1",
@@ -334,9 +312,6 @@ def backtest(records, min_train=30, model="trend-v3", no_repeat=True):
         "special_number_top4_hits": sum(row["special_number_top4_hit"] for row in rows),
         "special_number_top4_accuracy": sum(row["special_number_top4_hit"] for row in rows) / max(folds, 1),
         "average_regular_hits": sum(row["regular_hit_count"] for row in rows) / max(folds, 1),
-        "flat_zodiac_folds": len(flat_rows),
-        "flat_zodiac_hits": sum(row["flat_zodiac_hit"] for row in flat_rows),
-        "flat_zodiac_accuracy": sum(row["flat_zodiac_hit"] for row in flat_rows) / max(len(flat_rows), 1),
         "regular_three_exact_hits": sum(row["regular_three_exact_hit"] for row in rows),
         "regular_three_exact_accuracy": sum(row["regular_three_exact_hit"] for row in rows) / max(folds, 1),
         "average_regular_three_hits": sum(row["regular_three_hit_count"] for row in rows) / max(folds, 1),
@@ -411,7 +386,6 @@ def forecast_assessment(records, prediction, reviews_dir=None, min_train=30):
     walk_hits = evidence["special_zodiac_hits"]
     saved_hits = sum(row.get("special_zodiac_hit", False) for row in reviews)
     saved_count = len(reviews)
-    saved_flat_reviews = [row for row in reviews if row.get("flat_zodiac_hit") is not None]
     random_baseline = 1 / len(ANIMALS)
     walk_interval = wilson_interval(walk_hits, folds)
     saved_interval = wilson_interval(saved_hits, saved_count)
@@ -439,15 +413,6 @@ def forecast_assessment(records, prediction, reviews_dir=None, min_train=30):
             "hits": saved_hits,
             "accuracy": round(saved_hits / saved_count, 6) if saved_count else None,
             "wilson_95": [round(value, 6) for value in saved_interval],
-        },
-        "flat_zodiac": {
-            "hit_rule": "The predicted zodiac appears in any of the six regular positions or the special position.",
-            "walk_forward_folds": evidence["flat_zodiac_folds"],
-            "walk_forward_hits": evidence["flat_zodiac_hits"],
-            "walk_forward_accuracy": round(evidence["flat_zodiac_accuracy"], 6),
-            "saved_review_count": len(saved_flat_reviews),
-            "saved_review_hits": sum(row.get("flat_zodiac_hit") is True for row in saved_flat_reviews),
-            "saved_review_accuracy": round(sum(row.get("flat_zodiac_hit") is True for row in saved_flat_reviews) / len(saved_flat_reviews), 6) if saved_flat_reviews else None,
         },
         "decision_rule": "Strong pick requires at least 60 walk-forward folds and 20 saved reviews, with both 95% lower bounds above the 1/12 random-zodiac baseline.",
     }
